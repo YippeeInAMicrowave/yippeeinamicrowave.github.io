@@ -1,42 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Blue Microwave Inc. - ******** Inquiries</title>
+    <title>Blue Microwave Inc. - Business Inquiries</title>
     <style>
-        /* CSS styles for your page */
-        /* ... */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
     </style>
-    <script>
-        function checkSwearWords() {
-            var message = document.getElementById('message').value.toLowerCase();
-            var swearWords = ["fuck", "shit", "sex", "tits", "nigger", "bitch", "ass", "faggot", "dick", "cunt", "bastard", "sod", "minger"];
-        
-            for (var i = 0; i < swearWords.length; i++) {
-                if (message.includes(swearWords[i])) {
-                    alert('Please refrain from using inappropriate language or content.');
-                    return false;
-                }
-            }
-            return true;
-        }
-        
-        function validateForm() {
-            return checkSwearWords();
-        }
-    </script>
 </head>
-
 <body>
     <header>
-        <h1>Blue Microwave Inc. - ******** Inquiries</h1>
+        <h1>Blue Microwave Inc. - Business Inquiries</h1>
     </header>
     <div class="container">
-        <form action="process_enquiry.php" method="post"><label for="name">Name:</label> <input type="text" id="name" name="name" required=""> <label for="email">Email:</label> <input type="email" id="email" name="email" required=""> <label for="subject">Subject:</label> <input type="text" id="subject" name="subject" required=""> <label for="message">Message:</label> <textarea id="message" name="message" rows="5" required=""></textarea> <input type="submit" value="Submit"></form>
+        <form action="submit_enquiry.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
     </div>
 
 <div style="color: red; font-size: 12px; width: 600px; margin: 0 auto; text-align: center;">Created with <a href="https://wordtohtml.net/">WordToHTML.net</a> trial.</div>
 </body>
-
 </html>
